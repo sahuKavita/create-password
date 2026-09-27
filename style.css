@@ -1,0 +1,191 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+
+    background: linear-gradient(
+        135deg,
+        #07102d,
+        #101c52,
+        #07102d
+    );
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: white;
+}
+
+
+/* Main Container */
+.container {
+    width: 550px;
+}
+
+
+/* First Heading */
+h1 {
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+
+/* Green Heading */
+h2 {
+    color: #31d878;
+    font-size: 48px;
+    font-weight: 700;
+}
+
+
+/* Green Line */
+.line {
+    width: 510px;
+    height: 5px;
+
+    background-color: #31d878;
+
+    margin-top: 12px;
+    margin-bottom: 25px;
+
+    border-radius: 5px;
+}
+
+
+/* Password Box */
+.password-box {
+    width: 100%;
+    height: 105px;
+
+    background-color: white;
+
+    display: flex;
+    align-items: center;
+
+    border-radius: 8px;
+
+    padding-left: 25px;
+    padding-right: 20px;
+}
+
+
+/* Password Input */
+.password-box input {
+    width: 100%;
+    height: 100%;
+
+    border: none;
+    outline: none;
+
+    font-size: 25px;
+
+    color: #555;
+
+    background: transparent;
+}
+
+
+.password-box input::placeholder {
+    color: #c5c5c5;
+}
+
+
+/* Copy Button */
+.copy-btn {
+    width: 50px;
+    height: 50px;
+
+    border: none;
+    background: transparent;
+
+    color: #8eb4b5;
+
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.copy-btn:hover {
+    color: #31d878;
+}
+
+
+/* Generate Button */
+.generate-btn {
+    margin-top: 25px;
+
+    height: 65px;
+
+    padding: 0 25px;
+
+    border: none;
+    border-radius: 5px;
+
+    background-color: #31d878;
+
+    color: white;
+
+    font-size: 20px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+
+.generate-btn:hover {
+    background-color: #20bd63;
+
+    transform: translateY(-2px);
+}
+
+
+/* Lightning Icon */
+.generate-btn span {
+    font-size: 32px;
+    margin-right: 8px;
+
+    vertical-align: middle;
+}
+
+
+/* Mobile Responsive */
+@media (max-width: 600px) {
+
+    .container {
+        width: 90%;
+    }
+
+    h1,
+    h2 {
+        font-size: 36px;
+    }
+
+    .line {
+        width: 100%;
+    }
+
+    .password-box {
+        height: 75px;
+    }
+
+    .password-box input {
+        font-size: 18px;
+    }
+
+    .generate-btn {
+        font-size: 17px;
+    }
+}

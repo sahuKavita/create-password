@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Random Password Generator</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Generate a</h1>
+        <h2>Random Password</h2>
+
+        <div class="line"></div>
+
+        <!-- Password Box -->
+        <div class="password-box">
+
+            <input 
+                type="text" 
+                id="password"
+                placeholder="Password"
+               
+            >
+
+            <!-- Copy Button -->
+            <button class="copy-btn" onclick="copyPassword()">
+                <svg width="30" height="30" viewBox="0 0 24 24">
+                    <path d="M16 1H4C2.9 1 2 1.9 2 3v14h2V3h12V1z"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"/>
+
+                    <rect x="7" y="5" width="14" height="17"
+                          rx="2"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"/>
+                </svg>
+            </button>
+
+        </div>
+
+        <!-- Generate Button -->
+        <button class="generate-btn" >
+            <span>ϟ</span>
+            Generate Password
+        </button>
+
+    </div>
+
+
+    <!-- JavaScript -->
+    <script >
+        let mydiv=document.querySelector('.container')
+     let myInput=document.querySelector('#password')
+     let upperCase='ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+     let lowerCase='abcdefghijklmnopqrstuvwxyz'
+     let number='0123456789'
+     let symbol='!@#$%^&()_'
+     let password=''
+     let allChar=upperCase+lowerCase+number+symbol;
+     function generatePassword(){
+        password=''
+        for(let i=1;i<=8;i++){
+            password+=allChar[Math.floor(Math.random()*allChar.length)];
+        } 
+        
+        myInput.value=password
+     }
+     
+   function copyPassword(){
+    myInput.select()
+    navigator.clipboard.writeText(myInput.value)
+    .then(() => alert("Password copied!"))
+        .catch(() => alert("Copy failed, try again"))
+       }
+      
+     let mybtn=document.querySelector('.generate-btn')
+     mybtn.addEventListener('click',()=>{
+        generatePassword()
+     })
+
+    </script>
+
+</body>
+</html>
